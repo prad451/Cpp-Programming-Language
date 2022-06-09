@@ -4,6 +4,7 @@ if : to specify a block of code to be executed, if a specified condition is true
 else : to specify a block of code to be executed, if the same condition is false
 else if : to specify a new condition to test, if the first condition is false
 switch : to specify many alternative blocks of code to be executed
+nested-if : if-else block inside another if-else block
 
 1.if statement
 Syntax :
@@ -23,7 +24,7 @@ else
   //block of code to be executed if condition is false
 }
 
-3.else if
+3.else if ladder
 Syntax :
 if (condition1)
 {
@@ -41,6 +42,38 @@ else
 4.Short hand if-else(ternary operator)
 Syntax :
 variable = (condition) ? expressionTrue : expressionFalse;
+
+5.Switch statement
+Syntax :
+switch(variable)
+{
+  //cases
+}
+
+6.nested-if
+Syntax :
+if (condition1)
+{
+  if condition(2)
+  {
+     "statement1";
+  }
+  else
+  {
+     "statement 2";
+  }
+}
+else
+{
+   if (condition3)
+   {
+     "statement 3";
+   }
+   else
+   {
+     "statemenr 4";
+   }
+}
 */
 
 #include<iostream>
@@ -139,4 +172,36 @@ int main()
 			cout<<"Invalid choice!!";
 	}
 	return 0;
+}
+
+
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int num = 100;
+	if (num==100)
+	{
+		if (num>15)
+		{
+			cout<<"num is greater"<<endl;
+		}
+		else
+		{
+			cout<<"num is small"<<endl;
+		}
+	}
+	else
+	{
+		if(num<=100)
+		{
+			cout<<"num is less or equal to 100"<<endl;
+		}
+		else 
+		{
+			cout<<"num is greater or equal to 100"<<endl;
+		}
+	}
 }
