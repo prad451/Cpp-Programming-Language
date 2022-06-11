@@ -1,6 +1,10 @@
 /*C++ Constructors
 C++ Constructor is a special method which automatically called when object of a class is created
-To create a constructor we should use same name as a class name followed by paranthesis().*/
+To create a constructor we should use same name as a class name followed by paranthesis().
+Syntax : class A{
+             A(){}
+	    }
+Types : 1.Default  2.Parameterized  3.Copy*/
 
 #include<iostream>
 using namespace std;
@@ -105,4 +109,46 @@ int main()
 }
 
 //Note : by default all the members of a class are private,if we don't specify access specifier
+ /*C++ Destructor :
+>>A special type of member function that is used to deallocate the memory,allocated by the constructor.
+>>Syntax : 
+class A{
+   public:
+   A()
+   {
+   }
+   ~A()
+   {
+   }
+};
+>>When is destructor called? 
+A destructor function is called automatically when the object goes out of scope: 
+(1) the function ends 
+(2) the program ends 
+(3) a block containing local variables ends 
+(4) a delete operator is called  
+How are destructors different from a normal member function? 
+Destructors have same name as the class preceded by a tilde (~) 
+Destructors don’t take any argument and don’t return anything*/
+
+class String {
+private:
+    char* s;
+    int size;
  
+public:
+    String(char*); // constructor
+    ~String(); // destructor
+};
+ 
+String::String(char* c)
+{
+    size = strlen(c);
+    s = new char[size + 1];
+    strcpy(s, c);
+}
+String::~String() 
+{ 
+    delete[] s;
+}
+
